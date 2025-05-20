@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Título
-st.title("🌎 World Happiness Dashboard (Datos simulados)")
-
 # Dataset simulado
 data = {
     "Country": [
@@ -22,11 +19,13 @@ data = {
 
 df = pd.DataFrame(data)
 
+# Título
+st.title("🌎 World Happiness Dashboard (Datos simulados)")
+
 # Filtro en la parte superior
 region = st.selectbox("🎯 Selecciona una región:", options=df["Region"].unique())
 #st.sidebar.header("🎯 Filtros")
 #region = st.sidebar.selectbox("Selecciona una región:", options=df["Region"].unique())
-
 
 # Filtrar datos
 filtered_df = df[df["Region"] == region]
